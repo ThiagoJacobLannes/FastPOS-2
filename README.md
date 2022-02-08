@@ -6,4 +6,4 @@ Backlog:
 2. Permitir Ctrl + V
 3. Registar fluxos automatizados em atalhos de tecla.
 4. Download de faturas e arquivação em ficheiro selecionado.
-4.1 Validação de fatura automatizada
+5. Validação de fatura automatizada
