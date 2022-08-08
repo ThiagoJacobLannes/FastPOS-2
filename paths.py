@@ -1,3 +1,12 @@
 import os
+keyboard = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/keyboard.png"
 key1 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key1.png"
-key2 = "Hello"
+key2 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key2.png"
+key3 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key3.png"
+key4 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key4.png"
+key5 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key5.png"
+key6 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key6.png"
+key7 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key7.png"
+key8 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key8.png"
+key9 = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/key9.png"
+Entra = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/Entra.png"
