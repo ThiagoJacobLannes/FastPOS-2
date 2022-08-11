@@ -220,7 +220,7 @@ while True:
 
         if keyboard.is_pressed("x"):
             if pyautogui.locateOnScreen(paths.X, region = keyboard_location, confidence=0.8) is not None:
-                click_position = pyautogui.locateCenterOnScreen(paths.X, region = keyboard_location, confidence=0.7)
+                click_position = pyautogui.locateCenterOnScreen(paths.X, region = keyboard_location)
                 pyautogui.click(click_position)
             if pyautogui.locateOnScreen(paths.x_bdc, region = keyboard_bdc_location, confidence=0.8) is not None:
                 click_position = pyautogui.locateCenterOnScreen(paths.x_bdc, region = keyboard_bdc_location)
@@ -353,36 +353,3 @@ while True:
             if pyautogui.locateOnScreen(paths.espaco_bdc, region = keyboard_bdc_location, confidence=0.8) is not None:
                 click_position = pyautogui.locateCenterOnScreen(paths.espaco_bdc, region = keyboard_bdc_location, confidence=0.9)
                 pyautogui.click(click_position)
-        
-            
-    """         click direto no teclado
-    if keyboard.is_pressed("1") and pyautogui.locateOnScreen(paths.key1, region = keyboard_location) is not None:
-        click_position = pyautogui.center(pyautogui.locateOnScreen(paths.key1, region = keyboard_location))
-        pyautogui.click(click_position)
-    
-    if keyboard.is_pressed("2") and pyautogui.locateOnScreen(paths.key2) is not None:
-        pyautogui.click(paths.key2)
-
-    if keyboard.is_pressed("3") and pyautogui.locateOnScreen(paths.key3) is not None:
-        pyautogui.click(paths.key3)
-
-    if keyboard.is_pressed("4") and pyautogui.locateOnScreen(paths.key4) is not None:
-        pyautogui.click(paths.key4)
-
-    if keyboard.is_pressed("5") and pyautogui.locateOnScreen(paths.key5) is not None:
-        pyautogui.click(paths.key5)
-        
-    if keyboard.is_pressed("6") and pyautogui.locateOnScreen(paths.key6) is not None:
-        pyautogui.click(paths.key6)
-
-    if keyboard.is_pressed("7") and pyautogui.locateOnScreen(paths.key7) is not None:
-        pyautogui.click(paths.key7)
-
-    if keyboard.is_pressed("8") and pyautogui.locateOnScreen(paths.key8) is not None:
-        pyautogui.click(paths.key8)
-
-    if keyboard.is_pressed("9") and pyautogui.locateOnScreen(paths.key9) is not None:
-        pyautogui.click(paths.key9)
-
-    if keyboard.is_pressed("Enter") and pyautogui.locateOnScreen(paths.Entra) is not None:
-        pyautogui.click(paths.Entra)"""
