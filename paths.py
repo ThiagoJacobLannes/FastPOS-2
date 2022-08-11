@@ -2,6 +2,10 @@ import os
 
 initial_path = "c:/users/" + os.getlogin() + "/Desktop/FastPOS/resources/buttons/"
 
+keys_list_main = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "enter", "tab", "Backspace"]
+keys_list_bdc = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m", "enter", "tab", "backspace"]
+
+
 # keyboards
 keyboard = initial_path + "keyboard.png"
 keyboard_bdc = initial_path + "keyboard_bdc.png"

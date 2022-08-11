@@ -78,23 +78,40 @@ def paste(entry):
         click_position = pyautogui.locateCenterOnScreen(paths.Entra, region = keyboard_location, confidence=0.5)
         pyautogui.click(click_position)
 
-while True:
-    
+def keyboardinput(key_pressed):
+
     keyboard_location = pyautogui.locateOnScreen(paths.keyboard) #obtém localização do keyboard
-    keyboard_bdc_location = pyautogui.locateOnScreen(paths.keyboard_bdc)
+    keyboard_bdc_location = pyautogui.locateOnScreen(paths.keyboard_bdc) #obtém localização do keyboard BDC
+
+    if key_pressed in paths.keys_list_main and pyautogui.locateOnScreen(paths.keyboard) is not None:
+        if pyautogui.locateOnScreen(paths.keyboard) is not None:
+            path = paths.initial_path + key_pressed + ".png"
+            print(path)
+            if pyautogui.locateOnScreen(path, region = keyboard_location, confidence=0.8) is not None:
+                click_position = pyautogui.locateCenterOnScreen(path, region = keyboard_location)
+                pyautogui.click(click_position)
+    if key_pressed in paths.keys_list_bdc and pyautogui.locateOnScreen(paths.keyboard_bdc) is not None:
+        if pyautogui.locateOnScreen(paths.keyboard_bdc) is not None:
+            path = paths.initial_path + key_pressed + "_bdc.png"
+            if pyautogui.locateOnScreen(path, region = keyboard_bdc_location, confidence=0.8) is not None:
+                click_position = pyautogui.locateCenterOnScreen(path, region = keyboard_bdc_location)
+                pyautogui.click(click_position)
+
+while True:
 
     # Obtenção de janela
     if keyboard.is_pressed("ctrl+r"):
         window_handle = win32gui.GetForegroundWindow()
-        win32gui.MoveWindow(window_handle, 0, 0, 1386, 600, True)
+        #win32gui.MoveWindow(window_handle, 0, 0, 1386, 600, True)
         window_wanted = window_handle
 
     # Entrada de operador automatizada
     if keyboard.is_pressed("ctrl+1"):
         login()
-
-    # Digitação automatizada
+    
+    # Digitações no teclado
     if window_wanted == win32gui.GetForegroundWindow():
+        # Digitação automatizada
         if keyboard.is_pressed("ctrl + v"):
             root = Tk()
             root.geometry("180x40")
@@ -126,7 +143,13 @@ while True:
             root.mainloop()
         
         # Digitação manual no teclado
-        if keyboard.is_pressed("0"):
+
+        # Através de Função
+        tecla = keyboard.read_key()
+        keyboardinput(tecla)
+
+        # Através de condições
+        """if keyboard.is_pressed("0"):
             if pyautogui.locateOnScreen(paths.key0, region = keyboard_location, confidence=0.8) is not None:
                 click_position = pyautogui.locateCenterOnScreen(paths.key0, region = keyboard_location, confidence=0.9)
                 pyautogui.click(click_position)
@@ -352,4 +375,4 @@ while True:
         if keyboard.is_pressed("Space"):
             if pyautogui.locateOnScreen(paths.espaco_bdc, region = keyboard_bdc_location, confidence=0.8) is not None:
                 click_position = pyautogui.locateCenterOnScreen(paths.espaco_bdc, region = keyboard_bdc_location, confidence=0.9)
-                pyautogui.click(click_position)
+                pyautogui.click(click_position)"""
